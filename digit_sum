@@ -1,0 +1,12 @@
+print ("Program to sum all digits of entered number\n\n")
+number = input("Enter a number\n\n")
+i = sum = 0
+new_string = str(number)
+print("Entered Number is: " + new_string)
+number_len = len (new_string)
+print ("length of input number: " + str (number_len))
+while i < number_len:
+    sum = sum + int(new_string[i])
+    i = i + 1 
+
+print ("sum of " + new_string + " digits is: " + str (sum) )
