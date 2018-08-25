@@ -1,0 +1,14 @@
+print ("Character occurance counting \n\n")
+number = input("Enter a number\n\n") 
+i = sum = 0
+new_string = str(number)
+print("Entered Number is: " + new_string)
+number_len = len (new_string)
+print ("length of input number: " + str (number_len))
+temp=""
+
+while i < number_len:
+    if new_string[i] not in temp:
+        temp = temp + new_string[i]
+        print ( "count of " + new_string[i] + " is: " + str(new_string.count(new_string[i])) )
+    i = i + 1 
