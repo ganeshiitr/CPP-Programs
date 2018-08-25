@@ -1,0 +1,8 @@
+num = input("Enter a number\n\n")
+i = 0 
+sum = 0
+while i <= int (num):
+    sum = sum + i
+    i = i + 1 
+
+print ("sum of " + str (num) + " elements is: " + str (sum) )
