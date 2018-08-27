@@ -1,0 +1,21 @@
+# Guess Number Game in python 
+
+print "Program to Guess Number\n"
+import random 
+actual_number = random.ranint(1,100)
+
+entered_number = input("\nGuess A Number ")
+print("\nEntered Number is: "+ str(entered_number))
+
+while(1):
+    if(entered_number == actual_number):
+        print("\nCONGRATS You Guessed Correct Number \n")
+        break
+    elif(entered_number < actual_number):
+        print("OOPS! Entered Number is Too Low ! Try Again !\n")
+        entered_number = input("Guess A Number\n")
+        print("Entered Number is: "+ str(entered_number))
+    else:
+        print("OOPS! Entered Number is Too High ! Try Again !\n")
+        entered_number = input("Guess A Number\n")
+        print("Entered Number is: "+str(entered_number))
