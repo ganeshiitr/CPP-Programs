@@ -1,0 +1,10 @@
+Fruits1 = ['apple','banana','orange']
+Fruits2 = ['apple','banana']
+
+print(Fruits1)
+print(Fruits2)
+
+if Fruits1 == Fruits2 : 
+    print("Equal List")
+else:
+    print("Not Equal")
