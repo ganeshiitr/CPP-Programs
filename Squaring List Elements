@@ -1,0 +1,14 @@
+
+def Square_List(Number_List):
+    i=0
+    Square_ListNumbers = []
+    while i < len(Number_List):
+        Square_ListNumbers.append(Number_List[i]*Number_List[i])
+        i+=1
+    return Square_ListNumbers
+
+
+#Start Fromm Here 
+Number_List = [3,4,6,7]
+print("Input List: "+ str(Number_List))
+print("Output List: " + str(Square_List(Number_List)))
