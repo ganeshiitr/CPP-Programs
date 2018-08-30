@@ -1,0 +1,21 @@
+
+def Filter_Odd_Even_List(Input_List):
+    i = 0
+    Output_List = []
+    Odd_List = []
+    Even_List = []
+    for i in range(len(Input_List)):
+        if Input_List[i] % 2 == 0:
+            Even_List.append(Input_List[i])
+        else:
+            Odd_List.append(Input_List[i])
+        i+=1
+    Output_List.insert(0,Odd_List)
+    Output_List.insert(1,Even_List)
+    return Output_List
+
+
+Input_List = [1,2,3,4,5,6,7,8,9]
+print("Input List: " + str(Input_List))
+print("Output_List: " + str(Filter_Odd_Even_List(Input_List)))
+
