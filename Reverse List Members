@@ -1,0 +1,13 @@
+def Reverse_List_Members(Input_List):
+    i = 0
+    Output_List = []
+    for i in range(len(Input_List)):
+        #print(Input_List[i][::-1])
+        Output_List.insert(i,Input_List[i][::-1])
+        i+=1
+    return Output_List
+        
+
+Input_List = ['abc','def','ghi']
+print("Input   List: " + str(Input_List))
+print("Reverse List: "+ str(Reverse_List_Members(Input_List)))
