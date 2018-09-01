@@ -9,3 +9,13 @@ def FindCubesInDictionary(num):
 Cubes =  FindCubesInDictionary(5)
 #print(type(Cubes))
 print(Cubes)
+
+def DisplayDictionary(d):
+    for i,j in d.items():#items function gives all key values of dictionary
+        print(i,j)
+
+d = { 1: 1, 2: 8, 3: 27, 4: 64, 5: 125 }
+#print(type(d))
+DisplayDictionary(d)
+        
+    
