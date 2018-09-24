@@ -47,3 +47,19 @@ std::vector<std::vector<int>> constructSubmatrix(std::vector<std::vector<int>> m
     return temp;
 
 }
+int main() {
+
+	std::vector<std::vector<int>> matrix = { { 1, 0, 0, 2 }, { 0, 5, 0, 1 }, {
+			0, 0, 3, 5 } };
+	std::vector<int> rowsToDelete = { 0 };
+	std::vector<int> columnsToDelete = { 0, 1 };
+	for (int i = 0; i < matrix.size(); i++) {
+		for (int j = 0; j < matrix[i].size(); j++) {
+			cout << matrix[i][j] << " ";
+		}
+		cout << endl;
+
+	}
+	constructSubmatrix(matrix, rowsToDelete, columnsToDelete);
+	return 0;
+}
