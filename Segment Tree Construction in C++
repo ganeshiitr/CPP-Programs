@@ -23,55 +23,43 @@ struct tree_node* create_tree_node(int data) {
 }
 
 struct tree_node* build_segment_tree(int arr[], int start, int end) {
-	//cout << "hi";
 	tree_node* new_node = create_tree_node(0);
 	if (start == end || start > end) {
-		cout << "Start == End " << start << " " << end<<endl;
+		cout << "Start == End " << start << " " << end << endl;
 		new_node->left_node = NULL;
 		new_node->right_node = NULL;
 		new_node->data = arr[start];
 
 	} else {
 		int mid = start + ((end - start) / 2);
-		cout  << "Start "<<start<<" End "<<end<< " Mid "<< mid<<endl;
+		cout << "Start " << start << " End " << end << " Mid " << mid << endl;
 		new_node->left_node = build_segment_tree(arr, start, mid);
-		new_node->right_node = build_segment_tree(arr, mid+1, end);
+		new_node->right_node = build_segment_tree(arr, mid + 1, end);
+		new_node->data = new_node->left_node->data + new_node->right_node->data;
 
 	}
 	return new_node;
 }
 
-int fill_sum_segment_tree(struct tree_node* root) {
-	if (root == NULL) {
-		return 0;
-	} else {
-		root->data = root->data + fill_sum_segment_tree(root->left_node)
-				+ fill_sum_segment_tree(root->right_node);
-		return root->data;
-	}
-}
-
 void print_sum_segment_tree(struct tree_node* root) {
-    if(root == NULL)
-    return ;
-    else
-    {
-        print_sum_segment_tree(root->left_node);
-        print_sum_segment_tree(root->right_node);
-        cout<<root->data<< " ";
-        
-    }
+	if (root == NULL)
+		return;
+	else {
+		print_sum_segment_tree(root->left_node);
+		print_sum_segment_tree(root->right_node);
+		cout << root->data << " ";
+	}
 }
 int main() {
 	//cout << "hi";
 
-	int arr[] = { 1, 3, 5, 7, 9, 11, 13, 15 , 16};
+	int arr[] = { 1, 3, 5, 7, 9, 11, 13, 15, 16 };
 	int start_index = 0;
 	int end_index = sizeof(arr) / sizeof(int);
 
-	cout << "Start: " << start_index <<" End: " << end_index << endl;
-	struct tree_node* root = build_segment_tree(arr, start_index, end_index-1);
-	fill_sum_segment_tree(root);
+	cout << "Start: " << start_index << " End: " << end_index << endl;
+	struct tree_node* root = build_segment_tree(arr, start_index,
+			end_index - 1);
 	print_sum_segment_tree(root);
 
 	return 0;
